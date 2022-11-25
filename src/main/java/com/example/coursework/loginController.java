@@ -59,12 +59,37 @@ public class loginController {
     @FXML
     void initialize1()
     {
-       goToRegisterButton.setOnAction(event ->
 
+        loginSignUpButton.setOnAction(event-> {
+            String loginText = enterLoginButton.getText().trim();
+            String loginPassword = enterPasswordButon.getText().trim();
+
+            if(!loginText.equals("") && !loginPassword.equals("")) // если пароль и логин не пустые
+            {
+               loginUser(loginText,loginPassword);
+            }
+            else
+            {
+                System.out.println("Ошибка! Логин и пароль пустые!");
+            }
+
+
+        });
+
+
+
+
+       goToRegisterButton.setOnAction(event ->
        {
            openNewScene("registerManager.fxml");
+
        }
        );
+    }
+
+    private void loginUser(String loginText, String loginPassword)
+    {
+
     }
 
 }
