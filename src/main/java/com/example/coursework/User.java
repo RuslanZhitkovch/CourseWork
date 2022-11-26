@@ -2,7 +2,7 @@ package com.example.coursework;
 
 public class User
 {
-    public User(int idusers, String name, String second_name, String email, int age, String job_title, int role, int access, String password) {
+    public User(int idusers, String name, String second_name, String email, String age, String job_title, String role, String access, String password) {
         this.idusers = idusers;
         this.name = name;
         this.second_name = second_name;
@@ -18,10 +18,10 @@ public class User
   private String name;
   private String second_name;
   private String email;
-  private int age;
+  private String age;
   private String job_title;
-  private int role;
-  private int access;
+  private String role;
+  private String access;
   private String password;
 
     public int getIdusers()
@@ -57,11 +57,11 @@ public class User
         this.email = email;
     }
 
-    public int getAge() {
+    public String getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(String age) {
         this.age = age;
     }
 
@@ -73,19 +73,19 @@ public class User
         this.job_title = job_title;
     }
 
-    public int getRole() {
+    public String getRole() {
         return role;
     }
 
-    public void setRole(int role) {
+    public void setRole(String role) {
         this.role = role;
     }
 
-    public int getAccess() {
+    public String getAccess() {
         return access;
     }
 
-    public void setAccess(int access) {
+    public void setAccess(String access) {
         this.access = access;
     }
 
