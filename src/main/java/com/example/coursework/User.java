@@ -15,14 +15,18 @@ public class User
     }
 
     private int idusers;
-  private String name;
-  private String second_name;
-  private String email;
-  private String age;
-  private String job_title;
-  private String role;
-  private String access;
-  private String password;
+    private String name;
+    private String second_name;
+    private String email;
+    private String age;
+    private String job_title;
+    private String role;
+    private String access;
+    private String password;
+
+    public User() {
+
+    }
 
     public int getIdusers()
     {

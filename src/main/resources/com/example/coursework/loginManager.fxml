@@ -16,17 +16,17 @@
                         <Font size="18.0" />
                     </font>
                 </Button>
-                <TextField fx:id="enterLoginButton" layoutX="211.0" layoutY="77.0" prefHeight="40.0" prefWidth="326.0" promptText="Введите логин">
+                <TextField fx:id="enterLoginButton" layoutX="211.0" layoutY="77.0" prefHeight="43.0" prefWidth="346.0" promptText="Введите адрес электронной почты">
                     <font>
                         <Font size="20.0" />
                     </font>
                 </TextField>
-                <PasswordField fx:id="enterPasswordButon" layoutX="211.0" layoutY="159.0" prefHeight="44.0" prefWidth="326.0" promptText="Введите пароль">
+                <PasswordField fx:id="enterPasswordButon" layoutX="211.0" layoutY="159.0" prefHeight="44.0" prefWidth="346.0" promptText="Введите пароль">
                     <font>
                         <Font size="20.0" />
                     </font>
                 </PasswordField>
-                <Button fx:id="loginSignUpButton" layoutX="296.0" layoutY="223.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="136.0" text="Подтвердить">
+                <Button fx:id="loginSignUpButton" layoutX="296.0" layoutY="223.0" mnemonicParsing="false" onAction="#initialize1" prefHeight="50.0" prefWidth="136.0" text="Подтвердить">
                     <font>
                         <Font size="18.0" />
                     </font>

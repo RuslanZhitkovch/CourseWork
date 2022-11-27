@@ -8,7 +8,8 @@ import javafx.scene.control.Button;
 
 
 import java.io.IOException;
-
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 
 import javafx.fxml.FXML;
@@ -19,26 +20,6 @@ import javafx.stage.Stage;
 
 public class loginController {
 
-
-    public void openNewScene(String window)
-    {
-        goToRegisterButton.getScene().getWindow().hide();
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource(window));
-
-        try {
-            loader.load();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        Parent root = loader.getRoot();
-        Stage stage = new Stage();
-        stage.setScene(new Scene(root));
-        stage.showAndWait();
-
-
-    }
 
 
 
@@ -66,7 +47,7 @@ public class loginController {
 
             if(!loginText.equals("") && !loginPassword.equals("")) // если пароль и логин не пустые
             {
-               loginUser(loginText,loginPassword);
+                loginUser(loginText,loginPassword);
             }
             else
             {
@@ -79,16 +60,87 @@ public class loginController {
 
 
 
-       goToRegisterButton.setOnAction(event ->
-       {
-           openNewScene("registerManager.fxml");
+        goToRegisterButton.setOnAction(event ->
+                {
+                    goToRegisterButton.getScene().getWindow().hide();
+                    FXMLLoader loader = new FXMLLoader();
+                    loader.setLocation(getClass().getResource("registerManager.fxml"));
 
-       }
-       );
+                    try {
+                        loader.load();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+
+                    Parent root = loader.getRoot();
+                    Stage stage = new Stage();
+                    stage.setScene(new Scene(root));
+                    stage.showAndWait();
+
+                }
+        );
     }
 
-    private void loginUser(String loginText, String loginPassword)
+    private void loginUser(String emailText, String loginPassword)
     {
+
+        DBHandler dbHandler = new DBHandler();
+        User user = new User();
+        user.setEmail(emailText);       // устанавливаем юзеру email из кнопки
+        user.setPassword(loginPassword);
+        ResultSet result =  dbHandler.getUser(user);
+
+        int counter = 0;
+
+
+        try {
+            while (result.next()) {
+                counter++;
+
+
+            }
+        }catch (SQLException e)
+        {
+            e.printStackTrace();
+        }
+
+        if (counter >=1)
+        {
+            loginSignUpButton.getScene().getWindow().hide();
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("hello-view.fxml"));
+
+            try {
+                loader.load();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            Parent root = loader.getRoot();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.showAndWait();
+
+
+        }
+
+        else {
+            loginSignUpButton.getScene().getWindow().hide();
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("loginManager.fxml"));
+
+            try {
+                loader.load();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            Parent root = loader.getRoot();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.showAndWait();
+        }
+
 
     }
 
