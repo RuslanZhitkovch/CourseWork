@@ -16,6 +16,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 public class loginController {
@@ -47,7 +48,11 @@ public class loginController {
 
             if(!loginText.equals("") && !loginPassword.equals("")) // если пароль и логин не пустые
             {
-                loginUser(loginText,loginPassword);
+                try {
+                    loginUser(loginText,loginPassword);
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
             }
             else
             {
@@ -62,27 +67,29 @@ public class loginController {
 
         goToRegisterButton.setOnAction(event ->
                 {
+
                     goToRegisterButton.getScene().getWindow().hide();
-                    FXMLLoader loader = new FXMLLoader();
-                    loader.setLocation(getClass().getResource("registerManager.fxml"));
-
+                    Parent root = null;
                     try {
-                        loader.load();
+                        root = FXMLLoader.load(getClass().getResource("registerManager.fxml"));
                     } catch (IOException e) {
-                        e.printStackTrace();
+                        throw new RuntimeException(e);
                     }
+                    Scene scene = new Scene(root);
+                    Stage primaryStage = new Stage();
+                    primaryStage.setTitle("hello");
+                    primaryStage.setScene(scene);
+                    primaryStage.initModality(Modality.WINDOW_MODAL);
+                    primaryStage.show();
 
-                    Parent root = loader.getRoot();
-                    Stage stage = new Stage();
-                    stage.setScene(new Scene(root));
-                    stage.showAndWait();
+
+
 
                 }
         );
     }
 
-    private void loginUser(String emailText, String loginPassword)
-    {
+    private void loginUser(String emailText, String loginPassword) throws IOException {
 
         DBHandler dbHandler = new DBHandler();
         User user = new User();
@@ -107,38 +114,25 @@ public class loginController {
         if (counter >=1)
         {
             loginSignUpButton.getScene().getWindow().hide();
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("hello-view.fxml"));
 
-            try {
-                loader.load();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-            Parent root = loader.getRoot();
-            Stage stage = new Stage();
-            stage.setScene(new Scene(root));
-            stage.showAndWait();
-
-
+          Parent root = FXMLLoader.load(getClass().getResource("hello-view.fxml"));
+          Scene scene = new Scene(root);
+          Stage primaryStage = new Stage();
+          primaryStage.setTitle("hello");
+          primaryStage.setScene(scene);
+          primaryStage.initModality(Modality.WINDOW_MODAL);
+          primaryStage.show();
         }
 
         else {
             loginSignUpButton.getScene().getWindow().hide();
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("loginManager.fxml"));
-
-            try {
-                loader.load();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-            Parent root = loader.getRoot();
-            Stage stage = new Stage();
-            stage.setScene(new Scene(root));
-            stage.showAndWait();
+            Parent root = FXMLLoader.load(getClass().getResource("loginManager.fxml"));
+            Scene scene = new Scene(root);
+            Stage primaryStage = new Stage();
+            primaryStage.setTitle("hello");
+            primaryStage.setScene(scene);
+            primaryStage.initModality(Modality.WINDOW_MODAL);
+            primaryStage.show();
         }
 
 
