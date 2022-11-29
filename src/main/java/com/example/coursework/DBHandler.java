@@ -62,7 +62,8 @@ public class DBHandler extends Configs
     {
         ResultSet resSet = null;
 
-        String select = "SELECT * FROM " + Const.USER_TABLE + " WHERE " + Const.USER_EMAIL + "=? AND " + Const.USER_PASSWORD + "=?";
+        //String select = "SELECT * FROM " + Const.USER_TABLE + " WHERE " + Const.USER_EMAIL + "=? AND " + Const.USER_PASSWORD + "=?";
+        String select = "SELECT * FROM " + Const.USER_TABLE + " WHERE " + Const.USER_EMAIL + "=? AND " + Const.USER_PASSWORD + "=? AND " + Const.USER_ACCESS + "=?";
 
         try{
 
@@ -70,6 +71,7 @@ public class DBHandler extends Configs
 
             prSt.setString(1,user.getEmail());
             prSt.setString(2,user.getPassword());
+            prSt.setString(3,user.getAccess());
 
             resSet =  prSt.executeQuery();   // метод кот. получает данные из БД
         }

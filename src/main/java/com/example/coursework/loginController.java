@@ -130,8 +130,6 @@ public class loginController {
 
         if (counter >=1  )
         {
-
-
             loginSignUpButton.getScene().getWindow().hide();
           Parent root = FXMLLoader.load(getClass().getResource("hello-view.fxml"));
           Scene scene = new Scene(root);
@@ -144,14 +142,18 @@ public class loginController {
 
         else {
 
+
+
             loginSignUpButton.getScene().getWindow().hide();
             Parent root = FXMLLoader.load(getClass().getResource("loginManager.fxml"));
+
             Scene scene = new Scene(root);
             Stage primaryStage = new Stage();
             primaryStage.setTitle("hello");
             primaryStage.setScene(scene);
             primaryStage.initModality(Modality.WINDOW_MODAL);
             primaryStage.show();
+
         }
 
 
