@@ -21,7 +21,7 @@ public class User
     private String age;
     private String job_title;
     private String role;
-    private String access;
+    public  String access;
     private String password;
 
     public User() {

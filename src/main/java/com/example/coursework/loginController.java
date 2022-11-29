@@ -10,6 +10,7 @@ import javafx.scene.control.Button;
 import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 
 import javafx.fxml.FXML;
@@ -22,6 +23,13 @@ import javafx.stage.Stage;
 public class loginController {
 
 
+
+   public String CURRENT_ACCESS = "0";
+
+   public void set_current_access(String value)
+   {
+       this.CURRENT_ACCESS = value;
+   }
 
 
 
@@ -50,7 +58,7 @@ public class loginController {
             {
                 try {
                     loginUser(loginText,loginPassword);
-                } catch (IOException e) {
+                } catch (IOException | SQLException e) {
                     throw new RuntimeException(e);
                 }
             }
@@ -89,16 +97,25 @@ public class loginController {
         );
     }
 
-    private void loginUser(String emailText, String loginPassword) throws IOException {
-
-        DBHandler dbHandler = new DBHandler();
+    private void loginUser(String emailText, String loginPassword) throws IOException, SQLException
+    {
         User user = new User();
         user.setEmail(emailText);       // устанавливаем юзеру email из кнопки
         user.setPassword(loginPassword);
+        user.setAccess("1");
+
+
+
+
+
+
+
+
+        DBHandler dbHandler = new DBHandler();
         ResultSet result =  dbHandler.getUser(user);
+        System.out.println(user.getAccess());
 
         int counter = 0;
-
 
         try {
             while (result.next()) {
@@ -111,10 +128,11 @@ public class loginController {
             e.printStackTrace();
         }
 
-        if (counter >=1)
+        if (counter >=1  )
         {
-            loginSignUpButton.getScene().getWindow().hide();
 
+
+            loginSignUpButton.getScene().getWindow().hide();
           Parent root = FXMLLoader.load(getClass().getResource("hello-view.fxml"));
           Scene scene = new Scene(root);
           Stage primaryStage = new Stage();
@@ -125,6 +143,7 @@ public class loginController {
         }
 
         else {
+
             loginSignUpButton.getScene().getWindow().hide();
             Parent root = FXMLLoader.load(getClass().getResource("loginManager.fxml"));
             Scene scene = new Scene(root);

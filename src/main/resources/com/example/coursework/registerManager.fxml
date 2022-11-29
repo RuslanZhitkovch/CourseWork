@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="460.0" prefWidth="747.0" style="-fx-background-color: #da1212;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.coursework.registerController">
+<AnchorPane prefHeight="460.0" prefWidth="747.0" style="-fx-background-color: #f7746a;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.coursework.registerController">
     <children>
         <AnchorPane layoutY="117.0" prefHeight="343.0" prefWidth="747.0" style="-fx-background-color: white;">
             <children>
@@ -15,7 +15,7 @@
                         <Font size="20.0" />
                     </font>
                 </TextField>
-                <Button fx:id="confirmRegisterButton" layoutX="295.0" layoutY="269.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="136.0" text="Подтвердить">
+                <Button fx:id="confirmRegisterButton" layoutX="295.0" layoutY="269.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="136.0" style="-fx-background-color: #f7746a;" text="Подтвердить">
                     <font>
                         <Font size="18.0" />
                     </font>

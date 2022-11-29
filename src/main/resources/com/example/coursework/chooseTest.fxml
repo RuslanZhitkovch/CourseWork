@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="460.0" prefWidth="747.0" style="-fx-background-color: #f7746a;" styleClass="#f7746a" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.coursework.chooseTestController">
+    <children>
+        <AnchorPane layoutY="117.0" prefHeight="343.0" prefWidth="747.0" style="-fx-background-color: #F4F7FB;">
+         <children>
+            <Text fill="#434343" layoutX="47.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Выберите тест ">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Text>
+            <Button fx:id="cPlusPlusDeveloperButton" layoutX="60.0" layoutY="116.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="179.0" style="-fx-background-color: #f7746a; -fx-border-color: #f7746a; -fx-border-radius: #f7746a;" text="Разработчик на C++">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="javaDeveloperButton" layoutX="60.0" layoutY="72.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="179.0" style="-fx-background-color: #f7746a; -fx-border-color: #f7746a; -fx-border-radius: #f7746a;" text="Разработчик на Java">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="databaseDesignerButton" layoutX="60.0" layoutY="216.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="179.0" style="-fx-background-color: #f7746a; -fx-border-color: #f7746a; -fx-border-radius: #f7746a;" text="Программист баз данных">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="pythonDeveloperButton" layoutX="60.0" layoutY="163.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="179.0" style="-fx-background-color: #f7746a; -fx-border-color: #f7746a; -fx-border-radius: #f7746a;" text="Рython разработчик">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="hrManagerButton" layoutX="60.0" layoutY="261.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="179.0" style="-fx-background-color: #f7746a; -fx-border-color: #f7746a; -fx-border-radius: #f7746a;" text="Рекрутер">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Button>
+            <Separator layoutX="335.0" layoutY="-1.0" orientation="VERTICAL" prefHeight="343.0" prefWidth="6.0" />
+            <Button fx:id="exitButton" graphicTextGap="9.0" layoutX="618.0" layoutY="290.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="115.0" style="-fx-background-color: white; -fx-border-color: #f7746a; -fx-border-radius: #f7746a;" text="Выход">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="aboutProgramButton" graphicTextGap="9.0" layoutX="383.0" layoutY="290.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="115.0" style="-fx-background-color: white; -fx-border-color: #f7746a; -fx-border-radius: #f7746a;" text="О программе">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Button>
+            <ImageView fx:id="img" fitHeight="184.0" fitWidth="243.0" layoutX="424.0" layoutY="56.0" pickOnBounds="true"
+                       preserveRatio="true">
+               <Image url="@first.png"/>
+            </ImageView>
+
+         </children>
+        </AnchorPane>
+        <Label layoutX="62.0" layoutY="31.0" prefHeight="50.0" prefWidth="642.0" text="                                   Добро пожаловать!">
+            <font>
+                <Font name="System Bold" size="22.0" />
+            </font>
+        </Label>
+    </children>
+</AnchorPane>

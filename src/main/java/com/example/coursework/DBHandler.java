@@ -1,11 +1,7 @@
 package com.example.coursework;
 // Класс для подключение к БД. Что-то записывать, читать.
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.sql.ResultSet;
+import java.sql.*;
 
 public class DBHandler extends Configs
 {
@@ -91,6 +87,8 @@ public class DBHandler extends Configs
         return resSet;
 
     }
+
+
 
 
 }
