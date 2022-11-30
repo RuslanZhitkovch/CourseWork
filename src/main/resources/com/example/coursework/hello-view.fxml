@@ -3,6 +3,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
@@ -15,7 +16,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="460.0" prefWidth="747.0" style="-fx-background-color: #F4F7FB;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.coursework.HelloController">
     <children>
-        <AnchorPane layoutX="200.0" prefHeight="68.0" prefWidth="548.0" style="-fx-background-color: #fff;">
+        <AnchorPane layoutX="200.0" prefHeight="68.0" prefWidth="548.0" style="-fx-background-color: #f7746a;">
             <effect>
                 <DropShadow color="#0000001f" />
             </effect>
@@ -23,10 +24,15 @@
                 <ImageView fitHeight="53.0" fitWidth="43.0" layoutX="491.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true" rotate="53.7">
 
                 </ImageView>
+            <Label fx:id="currentQuizName" layoutX="26.0" layoutY="4.0" prefHeight="64.0" prefWidth="473.0">
+               <font>
+                  <Font size="43.0" />
+               </font>
+            </Label>
 
             </children>
         </AnchorPane>
-        <AnchorPane prefHeight="460.0" prefWidth="200.0" style="-fx-background-color: #fff;">
+        <AnchorPane prefHeight="460.0" prefWidth="200.0" style="-fx-background-color: #f7746a;">
             <effect>
                 <DropShadow color="#00000040" />
             </effect>
@@ -84,12 +90,7 @@
             <TextField layoutX="14.0" layoutY="31.0" prefHeight="47.0" prefWidth="175.0" text="Тестирование специалистов   Выберите свой тест:" />
             </children>
         </AnchorPane>
-        <Text fill="#434343" layoutX="313.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Тесты по языку Java">
-            <font>
-                <Font name="Montserrat Bold" size="29.0" />
-            </font>
-        </Text>
-        <RadioButton fx:id="radio_btn_1" layoutX="237.0" layoutY="198.0" mnemonicParsing="false" text="Console.Write()" textFill="#5e5e5e">
+        <RadioButton fx:id="radio_btn_1" layoutX="237.0" layoutY="198.0" mnemonicParsing="false" text="Хорошо" textFill="#5e5e5e">
             <font>
                 <Font name="Montserrat Regular" size="13.0" />
             </font>
@@ -97,22 +98,22 @@
                 <ToggleGroup fx:id="answers" />
             </toggleGroup>
         </RadioButton>
-        <Text fx:id="question_text" fill="#727272" layoutX="237.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Как вывести информацию на экран?" wrappingWidth="494.8199462890625">
+        <Text fx:id="question_text" fill="#727272" layoutX="237.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Как ваше настроение?" wrappingWidth="494.8199462890625">
             <font>
                 <Font name="Montserrat Regular" size="14.0" />
             </font>
         </Text>
-        <RadioButton fx:id="radio_btn_2" layoutX="237.0" layoutY="230.0" mnemonicParsing="false" text="System.out.println()" textFill="#5e5e5e" toggleGroup="$answers">
+        <RadioButton fx:id="radio_btn_2" layoutX="237.0" layoutY="230.0" mnemonicParsing="false" text="Могло быть лучше" textFill="#5e5e5e" toggleGroup="$answers">
             <font>
                 <Font name="Montserrat Regular" size="13.0" />
             </font>
         </RadioButton>
-        <RadioButton fx:id="radio_btn_3" layoutX="237.0" layoutY="263.0" mnemonicParsing="false" text="console.log()" textFill="#5e5e5e" toggleGroup="$answers">
+        <RadioButton fx:id="radio_btn_3" layoutX="237.0" layoutY="263.0" mnemonicParsing="false" text="Боевое" textFill="#5e5e5e" toggleGroup="$answers">
             <font>
                 <Font name="Montserrat Regular" size="13.0" />
             </font>
         </RadioButton>
-        <RadioButton fx:id="radio_btn_4" layoutX="237.0" layoutY="299.0" mnemonicParsing="false" text="print()" textFill="#5e5e5e" toggleGroup="$answers">
+        <RadioButton fx:id="radio_btn_4" layoutX="237.0" layoutY="299.0" mnemonicParsing="false" text="Неважно" textFill="#5e5e5e" toggleGroup="$answers">
             <font>
                 <Font name="Montserrat Regular" size="13.0" />
             </font>

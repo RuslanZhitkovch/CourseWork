@@ -4,7 +4,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
+import javafx.scene.control.*;
 
 
 import java.io.IOException;
@@ -15,8 +15,7 @@ import java.sql.Statement;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
@@ -32,7 +31,8 @@ public class loginController {
    }
 
 
-
+    @FXML
+    private Label failedLoginTextButton;
 
     @FXML
     private TextField enterLoginButton;
@@ -64,7 +64,8 @@ public class loginController {
             }
             else
             {
-                System.out.println("Ошибка! Логин и пароль пустые!");
+                failedLoginTextButton.setText("Ошибка входа. Повторите попытку.");
+                System.out.println("Кто-то пытается войти с пустыми полями логина и пароля.");
             }
 
 
@@ -99,6 +100,7 @@ public class loginController {
 
     private void loginUser(String emailText, String loginPassword) throws IOException, SQLException
     {
+
         User user = new User();
         user.setEmail(emailText);       // устанавливаем юзеру email из кнопки
         user.setPassword(loginPassword);
@@ -131,7 +133,7 @@ public class loginController {
         if (counter >=1  )
         {
             loginSignUpButton.getScene().getWindow().hide();
-          Parent root = FXMLLoader.load(getClass().getResource("hello-view.fxml"));
+          Parent root = FXMLLoader.load(getClass().getResource("chooseTest.fxml"));
           Scene scene = new Scene(root);
           Stage primaryStage = new Stage();
           primaryStage.setTitle("hello");
@@ -143,16 +145,22 @@ public class loginController {
         else {
 
 
-
+            System.out.println("incorrect password");
             loginSignUpButton.getScene().getWindow().hide();
-            Parent root = FXMLLoader.load(getClass().getResource("loginManager.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("incorrectPasswordOrAccess.fxml"));
 
             Scene scene = new Scene(root);
+
             Stage primaryStage = new Stage();
+
             primaryStage.setTitle("hello");
+
             primaryStage.setScene(scene);
+
             primaryStage.initModality(Modality.WINDOW_MODAL);
+
             primaryStage.show();
+
 
         }
 

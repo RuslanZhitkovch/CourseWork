@@ -28,8 +28,68 @@ import java.util.List;
 
 
 
-public class chooseTestController {
+public class chooseTestController
+{
 
+
+    public static int javaQuestions = 0;
+    public static int pythonQuestions = 0;
+    public static int ciPlusPlusQuestions = 0;
+    public static int databaseQuestions = 0;
+    public static int hrManager = 0;
+
+
+    public static int getCiPlusPlusQuestions() {
+        return ciPlusPlusQuestions;
+    }
+
+    public static int getHrManagerQuestions() {
+        return hrManager;
+    }
+
+    public static int getDatabaseQuestions() {
+        return databaseQuestions;
+    }
+
+    public void setJavaQuestions(int value)
+    {
+        this.javaQuestions = value;
+    }
+
+    public void setPythonQuestions(int value)
+    {
+        this.pythonQuestions = value;
+    }
+
+    public void setCiPlusPlusQuestions(int ciPlusPlusQuestions)
+    {
+        this.ciPlusPlusQuestions = ciPlusPlusQuestions;
+    }
+
+    public void setDatabaseQuestions(int databaseQuestions)
+    {
+        chooseTestController.databaseQuestions = databaseQuestions;
+    }
+
+    public void setHrManager(int hrManager)
+    {
+        chooseTestController.hrManager = hrManager;
+    }
+
+
+
+
+    public static int getJavaQuestions()
+    {
+        return javaQuestions;
+    }
+
+
+
+    public static int getPythonQuestions()
+    {
+        return pythonQuestions;
+    }
 
 
 
@@ -84,6 +144,29 @@ public class chooseTestController {
 
         cPlusPlusDeveloperButton.setOnAction(event ->
         {
+            setCiPlusPlusQuestions(1);
+
+            setDatabaseQuestions(0);
+            setHrManager(0);
+            setJavaQuestions(0);
+            setPythonQuestions(0);
+
+
+            cPlusPlusDeveloperButton.getScene().getWindow().hide();
+            Parent root = null;
+            try {
+                root = FXMLLoader.load(getClass().getResource("hello-view.fxml"));
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            Scene scene = new Scene(root);
+            Stage primaryStage = new Stage();
+            primaryStage.setTitle("hello");
+            primaryStage.setScene(scene);
+            primaryStage.initModality(Modality.WINDOW_MODAL);
+            primaryStage.show();
+
+
 
 
         });
@@ -91,22 +174,77 @@ public class chooseTestController {
 
         databaseDesignerButton.setOnAction(event ->
         {
+            setDatabaseQuestions(1);
+
+            setCiPlusPlusQuestions(0);
+            setHrManager(0);
+            setJavaQuestions(0);
+            setPythonQuestions(0);
+
+
+            databaseDesignerButton.getScene().getWindow().hide();
+            Parent root = null;
+            try {
+                root = FXMLLoader.load(getClass().getResource("hello-view.fxml"));
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            Scene scene = new Scene(root);
+            Stage primaryStage = new Stage();
+            primaryStage.setTitle("hello");
+            primaryStage.setScene(scene);
+            primaryStage.initModality(Modality.WINDOW_MODAL);
+            primaryStage.show();
+
+
+
 
         });
 
 
-        exitButton.setOnAction(event ->
-        {
-
-        });
 
 
         hrManagerButton.setOnAction(event ->
         {
+            setHrManager(1);
+
+            setCiPlusPlusQuestions(0);
+            setDatabaseQuestions(0);
+            setJavaQuestions(0);
+            setPythonQuestions(0);
+
+
+
+            hrManagerButton.getScene().getWindow().hide();
+            Parent root = null;
+            try {
+                root = FXMLLoader.load(getClass().getResource("hello-view.fxml"));
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            Scene scene = new Scene(root);
+            Stage primaryStage = new Stage();
+            primaryStage.setTitle("hello");
+            primaryStage.setScene(scene);
+            primaryStage.initModality(Modality.WINDOW_MODAL);
+            primaryStage.show();
+
+
+
+
 
         });
 
         javaDeveloperButton.setOnAction(event -> {
+
+            setJavaQuestions(1);
+
+            setCiPlusPlusQuestions(0);
+            setDatabaseQuestions(0);
+            setHrManager(0);
+            setPythonQuestions(0);
+
+
 
 
 
@@ -130,9 +268,42 @@ public class chooseTestController {
 
         });
 
-        pythonDeveloperButton.setOnAction(event -> {
+        pythonDeveloperButton.setOnAction(event ->
+        {
+            setPythonQuestions(1);
+
+            setCiPlusPlusQuestions(0);
+            setDatabaseQuestions(0);
+            setHrManager(0);
+            setJavaQuestions(0);
+
+
+
+            pythonDeveloperButton.getScene().getWindow().hide();
+            Parent root = null;
+            try {
+                root = FXMLLoader.load(getClass().getResource("hello-view.fxml"));
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            Scene scene = new Scene(root);
+            Stage primaryStage = new Stage();
+            primaryStage.setTitle("hello");
+            primaryStage.setScene(scene);
+            primaryStage.initModality(Modality.WINDOW_MODAL);
+            primaryStage.show();
+
+
+
 
         });
+
+        exitButton.setOnAction(event ->
+        {
+
+
+        });
+
 
 
 
