@@ -28,7 +28,7 @@ public class DBHandler extends Configs
             throw new RuntimeException(e);
         }
         try {
-            return  DriverManager.getConnection("jdbc:mysql://localhost:3306/animals", "root", "24101979");
+            return  DriverManager.getConnection("jdbc:mysql://localhost:3306/users", "root", "24101979");
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
