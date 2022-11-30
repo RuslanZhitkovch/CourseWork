@@ -5,9 +5,9 @@ import java.sql.*;
 
 public class DBHandler extends Configs
 {
-    Connection dbConnection;
+    static Connection dbConnection;
 
-    public Connection getDbConnection() throws ClassNotFoundException, SQLException
+    public static Connection getDbConnection() throws ClassNotFoundException, SQLException
     {
 
 
@@ -17,6 +17,21 @@ public class DBHandler extends Configs
         Class.forName("com.mysql.cj.jdbc.Driver");  // Имя драйвера, который будем использовать
         dbConnection = DriverManager.getConnection(connectionString, dbUser,dbPass);
         return dbConnection;
+    }
+
+
+
+    public static Connection getConnection() {
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        try {
+            return  DriverManager.getConnection("jdbc:mysql://localhost:3306/animals", "root", "24101979");
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 

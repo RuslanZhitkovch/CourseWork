@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="479.0" prefWidth="1084.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.coursework.adminPanelController">
+    <children>
+        <TableView fx:id="table" layoutY="20.0" prefHeight="361.0" prefWidth="893.0">
+            <columns>
+            <TableColumn fx:id="column_id" prefWidth="47.0" text="id" />
+                <TableColumn fx:id="column_name" prefWidth="124.0" text="Имя" />
+                <TableColumn fx:id="column_second_name" prefWidth="102.0" text="Фамилия" />
+                <TableColumn fx:id="email_column" prefWidth="130.0" text="email" />
+                <TableColumn fx:id="column_age" prefWidth="59.0" text="Возраст" />
+                <TableColumn fx:id="column_role" prefWidth="149.0" text="Роль(1 -админ,0-юзер)" />
+                <TableColumn fx:id="column_access" prefWidth="68.0" text="Доступ" />
+            <TableColumn fx:id="column_password" prefWidth="104.0" text="Пароль" />
+            <TableColumn fx:id="column_job_title" prefWidth="109.0" text="Должность" />
+            </columns>
+        </TableView>
+        <Button fx:id="button_read" layoutX="14.0" layoutY="399.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="102.0" text="Read" />
+        <Button fx:id="button_delete" layoutX="292.0" layoutY="399.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="109.0" text="Delete" />
+        <Button fx:id="button_update" layoutX="432.0" layoutY="399.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="110.0" text="Update" />
+        <TextField fx:id="field_name" layoutX="914.0" layoutY="20.0" prefWidth="120.0" promptText="Имя" />
+        <TextField fx:id="field_second_name" layoutX="914.0" layoutY="59.0" prefWidth="120.0" promptText="Фамилия" />
+        <TextField fx:id="field_email" layoutX="914.0" layoutY="101.0" prefWidth="120.0" promptText="email" />
+        <TextField fx:id="field_age" layoutX="914.0" layoutY="141.0" prefWidth="120.0" promptText="Возраст" />
+        <TextField fx:id="field_role" layoutX="914.0" layoutY="181.0" prefHeight="26.0" prefWidth="120.0" promptText="Роль" />
+        <TextField fx:id="field_access" layoutX="914.0" layoutY="227.0" prefWidth="120.0" promptText="Доступ" />
+        <Button fx:id="button_add" layoutX="143.0" layoutY="399.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="102.0" text="Add" />
+        <Button fx:id="button_exit" layoutX="663.0" layoutY="400.0" mnemonicParsing="false" prefWidth="200.0" text="Exit" />
+      <TextField fx:id="field_password" layoutX="914.0" layoutY="278.0" prefWidth="120.0" promptText="Пароль" />
+      <TextField fx:id="field_job_title" layoutX="914.0" layoutY="328.0" prefWidth="120.0" promptText="Должность" />
+    </children>
+</AnchorPane>

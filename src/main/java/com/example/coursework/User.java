@@ -1,7 +1,21 @@
 package com.example.coursework;
 
-public class User
+import java.io.Serializable;
+
+public class User implements Serializable
 {
+
+
+    private int idusers;
+    private String name;
+    private String second_name;
+    private String email;
+    private String age;
+    private String job_title;
+    private String role;
+    public  String access;
+    private String password;
+
     public User(int idusers, String name, String second_name, String email, String age, String job_title, String role, String access, String password) {
         this.idusers = idusers;
         this.name = name;
@@ -14,18 +28,37 @@ public class User
         this.password = password;
     }
 
-    private int idusers;
-    private String name;
-    private String second_name;
-    private String email;
-    private String age;
-    private String job_title;
-    private String role;
-    public  String access;
-    private String password;
+    public User( String name, String second_name, String email, String age, String job_title, String role, String access, String password) {
+
+        this.name = name;
+        this.second_name = second_name;
+        this.email = email;
+        this.age = age;
+        this.job_title = job_title;
+        this.role = role;
+        this.access = access;
+        this.password = password;
+    }
+
 
     public User() {
 
+    }
+
+    public User(Integer idusers, String name, String second_name, String email, String age, String job_title, String role, String access, String password) {
+
+        this.idusers = idusers;
+        this.name = name;
+        this.second_name = second_name;
+        this.email = email;
+        this.age = age;
+        this.job_title = job_title;
+        this.role = role;
+        this.access = access;
+        this.password = password;
+    }
+
+    public User(String trim, String trim1, String trim2, String trim3, String trim4, String trim5, String trim6, Integer idusers) {
     }
 
     public int getIdusers()
