@@ -24,11 +24,11 @@
                 <ImageView fitHeight="53.0" fitWidth="43.0" layoutX="491.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true" rotate="53.7">
 
                 </ImageView>
-            <Label fx:id="currentQuizName" layoutX="26.0" layoutY="4.0" prefHeight="64.0" prefWidth="473.0">
-               <font>
-                  <Font size="43.0" />
-               </font>
-            </Label>
+                <Label fx:id="currentQuizName" layoutX="26.0" layoutY="4.0" prefHeight="64.0" prefWidth="473.0">
+                    <font>
+                        <Font size="43.0" />
+                    </font>
+                </Label>
 
             </children>
         </AnchorPane>
@@ -87,7 +87,7 @@
                         <Insets />
                     </opaqueInsets>
                 </Separator>
-            <TextField layoutX="14.0" layoutY="31.0" prefHeight="47.0" prefWidth="175.0" text="Тестирование специалистов   Выберите свой тест:" />
+                <TextField layoutX="14.0" layoutY="31.0" prefHeight="47.0" prefWidth="175.0" text="Тестирование специалистов   Выберите свой тест:" />
             </children>
         </AnchorPane>
         <RadioButton fx:id="radio_btn_1" layoutX="237.0" layoutY="198.0" mnemonicParsing="false" text="Хорошо" textFill="#5e5e5e">

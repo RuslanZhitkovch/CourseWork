@@ -11,7 +11,7 @@ public class HelloApplication extends Application
 {
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("adminPanel.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("aboutProgram.fxml"));
         primaryStage.setTitle("Тесты по языка программирования");
         primaryStage.setScene(new Scene(root, 747, 460));
         primaryStage.show();

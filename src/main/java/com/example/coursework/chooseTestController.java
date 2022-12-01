@@ -135,6 +135,19 @@ public class chooseTestController
         aboutProgramButton.setOnAction(event ->
         {
 
+            aboutProgramButton.getScene().getWindow().hide();
+            Parent root = null;
+            try {
+                root = FXMLLoader.load(getClass().getResource("aboutProgram.fxml"));
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            Scene scene = new Scene(root);
+            Stage primaryStage = new Stage();
+            primaryStage.setTitle("hello");
+            primaryStage.setScene(scene);
+            primaryStage.initModality(Modality.WINDOW_MODAL);
+            primaryStage.show();
 
 
 
@@ -300,7 +313,7 @@ public class chooseTestController
 
         exitButton.setOnAction(event ->
         {
-
+            System.exit(0);
 
         });
 

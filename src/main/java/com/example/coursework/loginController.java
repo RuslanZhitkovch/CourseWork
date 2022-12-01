@@ -86,7 +86,7 @@ public class loginController {
                     }
                     Scene scene = new Scene(root);
                     Stage primaryStage = new Stage();
-                    primaryStage.setTitle("hello");
+                    primaryStage.setTitle("Окно регистрации");
                     primaryStage.setScene(scene);
                     primaryStage.initModality(Modality.WINDOW_MODAL);
                     primaryStage.show();
@@ -101,10 +101,11 @@ public class loginController {
     private void loginUser(String emailText, String loginPassword) throws IOException, SQLException
     {
 
-        User user = new User();
-        user.setEmail(emailText);       // устанавливаем юзеру email из кнопки
-        user.setPassword(loginPassword);
-        user.setAccess("1");
+        User admin = new User();
+        admin.setEmail(emailText);       // устанавливаем юзеру email из кнопки
+        admin.setPassword(loginPassword);
+        admin.setAccess("1");  // для проверки может ли аккаунт пройти тест
+        admin.setRole("1");  // для проверки на админа
 
 
 
@@ -114,26 +115,37 @@ public class loginController {
 
 
         DBHandler dbHandler = new DBHandler();
-        ResultSet result =  dbHandler.getUser(user);
-        System.out.println(user.getAccess());
+        ResultSet result =  dbHandler.getUser(admin);
+
+
+
+
 
         int counter = 0;
 
-        try {
-            while (result.next()) {
+        try
+        {
+            while (result.next())
+            {
                 counter++;
 
 
             }
-        }catch (SQLException e)
+        }
+
+
+
+
+        catch (SQLException e)
         {
             e.printStackTrace();
         }
 
+
         if (counter >=1  )
         {
             loginSignUpButton.getScene().getWindow().hide();
-          Parent root = FXMLLoader.load(getClass().getResource("chooseTest.fxml"));
+          Parent root = FXMLLoader.load(getClass().getResource("adminPanel.fxml"));
           Scene scene = new Scene(root);
           Stage primaryStage = new Stage();
           primaryStage.setTitle("hello");
@@ -142,7 +154,58 @@ public class loginController {
           primaryStage.show();
         }
 
-        else {
+        User user = new User();
+        user.setEmail(emailText);       // устанавливаем юзеру email из кнопки
+        user.setPassword(loginPassword);
+        user.setAccess("1");  // для проверки может ли аккаунт пройти тест
+        user.setRole("0");  // для проверки может ли аккаунт пройти тест
+
+
+        DBHandler dbHandlerUser = new DBHandler();
+        ResultSet resultUser =  dbHandlerUser.getUser(user);
+
+
+
+
+
+        int counterUser = 0;
+
+        try
+        {
+            while (resultUser.next())
+            {
+                counterUser++;
+
+
+            }
+        }
+
+
+
+
+        catch (SQLException e)
+        {
+            e.printStackTrace();
+        }
+
+
+        if (counterUser >=1  )
+        {
+            loginSignUpButton.getScene().getWindow().hide();
+            Parent root = FXMLLoader.load(getClass().getResource("chooseTest.fxml"));
+            Scene scene = new Scene(root);
+            Stage primaryStage = new Stage();
+            primaryStage.setTitle("hello");
+            primaryStage.setScene(scene);
+            primaryStage.initModality(Modality.WINDOW_MODAL);
+            primaryStage.show();
+        }
+
+
+
+
+
+        if (counterUser <1 && counter <1){
 
 
             System.out.println("incorrect password");
@@ -153,7 +216,7 @@ public class loginController {
 
             Stage primaryStage = new Stage();
 
-            primaryStage.setTitle("hello");
+            primaryStage.setTitle("Окно повторного входа");
 
             primaryStage.setScene(scene);
 

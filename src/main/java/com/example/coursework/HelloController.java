@@ -171,7 +171,7 @@ public class HelloController {
             if(selectedRadioButton != null) {
                 String toogleGroupValue = selectedRadioButton.getText();
 
-                if(toogleGroupValue.equals(nowCorrectAnswer)) {
+                if (toogleGroupValue.equals(nowCorrectAnswer)) {
                     System.out.println("Верный ответ");
                     correctAnswers++;
                 } else {
@@ -179,14 +179,14 @@ public class HelloController {
                 }
 
                 // Это был последний вопрос
-                if(nowQuestion + 1 == type_of_questions.length) {
+                if (nowQuestion + 1 == type_of_questions.length) {
                     radio_btn_1.setVisible(false);
                     radio_btn_2.setVisible(false);
                     radio_btn_3.setVisible(false);
                     radio_btn_4.setVisible(false);
                     answerBtn.setVisible(false);
 
-                    question_text.setText("Вы правильно ответили на " + (correctAnswers - 1) + " из " + (type_of_questions.length - 1)  + " вопросов!");
+                    question_text.setText("Вы правильно ответили на " + (correctAnswers) + " из " + (type_of_questions.length - 1) + " вопросов!");
                 } else {
                     nowQuestion++;
                     nowCorrectAnswer = type_of_questions[nowQuestion].correctAnswer();
@@ -209,63 +209,12 @@ public class HelloController {
 
             }
         });
-
-
-
-
     }
-
-
 
 
     @FXML
     public void initialize()
      {
-            /* nowCorrectAnswer = questions[nowQuestion].correctAnswer();
-
-        answerBtn.setOnAction(e -> {
-            RadioButton selectedRadioButton = (RadioButton) answers.getSelectedToggle();
-            if(selectedRadioButton != null) {
-                String toogleGroupValue = selectedRadioButton.getText();
-
-                if(toogleGroupValue.equals(nowCorrectAnswer)) {
-                    System.out.println("Верный ответ");
-                    correctAnswers++;
-                } else {
-                    System.out.println("Не верный ответ");
-                }
-
-                // Это был последний вопрос
-                if(nowQuestion + 1 == questions.length) {
-                    radio_btn_1.setVisible(false);
-                    radio_btn_2.setVisible(false);
-                    radio_btn_3.setVisible(false);
-                    radio_btn_4.setVisible(false);
-                    answerBtn.setVisible(false);
-
-                    question_text.setText("Вы правильно ответили на " + correctAnswers + " из " + questions.length + " вопросов!");
-                } else {
-                    nowQuestion++;
-                    nowCorrectAnswer = questions[nowQuestion].correctAnswer();
-
-                    question_text.setText(questions[nowQuestion].getQuestion());
-                    String[] answers = questions[nowQuestion].getAnswers();
-
-
-                    List<String> intList = Arrays.asList(answers);
-
-                    Collections.shuffle(intList);
-
-                    radio_btn_1.setText(intList.get(0));
-                    radio_btn_2.setText(intList.get(1));
-                    radio_btn_3.setText(intList.get(2));
-                    radio_btn_4.setText(intList.get(3));
-
-                    selectedRadioButton.setSelected(false);
-                }
-
-            }
-        });*/
 
 
          if (getJavaQuestions() == 1)

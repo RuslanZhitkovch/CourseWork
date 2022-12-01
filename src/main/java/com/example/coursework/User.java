@@ -118,7 +118,8 @@ public class User implements Serializable
         this.job_title = job_title;
     }
 
-    public String getRole() {
+    public String getRole()
+    {
         return role;
     }
 
