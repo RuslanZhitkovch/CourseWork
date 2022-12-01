@@ -122,6 +122,7 @@ public class adminPanelController
         column_access.setCellValueFactory(new PropertyValueFactory<>("access"));
         column_password.setCellValueFactory(new PropertyValueFactory<>("password"));
         column_job_title.setCellValueFactory(new PropertyValueFactory<>("job_title"));
+        column_id.setCellValueFactory(new PropertyValueFactory<>("idusers"));
 
         button_add.setOnAction(actionEvent -> {
             User user = new User(
@@ -156,6 +157,7 @@ public class adminPanelController
                 field_email.setText(table.getSelectionModel().getSelectedItem().getEmail());
                 field_age.setText(table.getSelectionModel().getSelectedItem().getAge());
                 field_role.setText(table.getSelectionModel().getSelectedItem().getRole());
+                field_access.setText(table.getSelectionModel().getSelectedItem().getAccess());
                 field_password.setText(table.getSelectionModel().getSelectedItem().getPassword());
                 field_job_title.setText(table.getSelectionModel().getSelectedItem().getJob_title());
             } else {
@@ -168,6 +170,7 @@ public class adminPanelController
                         field_email.getText().trim(),
                         field_age.getText().trim(),
                         field_role.getText().trim(),
+                        field_access.getText().trim(),
                         field_password.getText().trim(),
                         field_job_title.getText().trim(),
                         table.getSelectionModel().getSelectedItem().getIdusers()

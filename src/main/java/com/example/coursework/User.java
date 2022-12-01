@@ -6,7 +6,7 @@ public class User implements Serializable
 {
 
 
-    private int idusers;
+    private Integer idusers;
     private String name;
     private String second_name;
     private String email;
@@ -16,7 +16,14 @@ public class User implements Serializable
     public  String access;
     private String password;
 
-    public User(int idusers, String name, String second_name, String email, String age, String job_title, String role, String access, String password) {
+
+
+
+
+
+    public User(Integer idusers, String name, String second_name, String email, String age, String job_title, String role, String access, String password)
+    {
+
         this.idusers = idusers;
         this.name = name;
         this.second_name = second_name;
@@ -28,8 +35,8 @@ public class User implements Serializable
         this.password = password;
     }
 
-    public User( String name, String second_name, String email, String age, String job_title, String role, String access, String password) {
-
+    public User(String name, String second_name, String email, String age, String job_title, String role, String access, String password)
+    {
         this.name = name;
         this.second_name = second_name;
         this.email = email;
@@ -45,9 +52,8 @@ public class User implements Serializable
 
     }
 
-    public User(Integer idusers, String name, String second_name, String email, String age, String job_title, String role, String access, String password) {
-
-        this.idusers = idusers;
+    public User(String name, String second_name, String email, String age, String role, String job_title,String access, String password, Integer idusers)
+    {
         this.name = name;
         this.second_name = second_name;
         this.email = email;
@@ -56,12 +62,14 @@ public class User implements Serializable
         this.role = role;
         this.access = access;
         this.password = password;
+        this.idusers = idusers;
+
     }
 
-    public User(String trim, String trim1, String trim2, String trim3, String trim4, String trim5, String trim6, Integer idusers) {
-    }
 
-    public int getIdusers()
+
+
+    public Integer getIdusers()
     {
         return idusers;
     }

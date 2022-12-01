@@ -37,8 +37,8 @@ public class RequestHandler implements Runnable {
                     connectionTCP.writeObject(user);
                 }
                 case DELETE -> {
-                    Integer id = (Integer) connectionTCP.readObject();
-                    userRepository.deleteById(id);
+                    Integer idusers = (Integer) connectionTCP.readObject();
+                    userRepository.deleteById(idusers);
                 }
 
                 case EXIT -> {

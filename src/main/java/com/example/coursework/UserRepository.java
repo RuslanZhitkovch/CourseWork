@@ -9,7 +9,7 @@ public interface UserRepository {
 
     List<User> gelAll();
 
-    void deleteById(Integer id);
+    void deleteById(Integer idusers);
 
     void add(User user);
 

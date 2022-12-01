@@ -44,7 +44,7 @@ public class UserRepositoryImpl implements UserRepository {
 
     @Override
     public void deleteById(Integer id) {
-        String sqlQuery  = "DELETE FROM users WHERE id = " + id;
+        String sqlQuery  = "DELETE FROM users WHERE idusers = " + id;
 
         try {
             Statement statement = connection.createStatement();
@@ -81,7 +81,7 @@ public class UserRepositoryImpl implements UserRepository {
 
     @Override
     public void update(User user) {
-        String sqlQuery = "UPDATE users SET name = ?, second_name = ?, email = ?, age = ?, job_title = ?, role = ?, access = ?, password = ? WHERE id = ?";
+        String sqlQuery = "UPDATE users SET name = ?, second_name = ?, email = ?, age = ?, job_title = ?, role = ?, access = ?, password = ? WHERE idusers = ?";
 
         try {
             PreparedStatement statement = connection.prepareStatement(sqlQuery);
@@ -93,6 +93,7 @@ public class UserRepositoryImpl implements UserRepository {
             statement.setString(6, user.getRole());
             statement.setString(7, user.getAccess());
             statement.setString(8, user.getPassword());
+            statement.setInt(9, user.getIdusers());
             statement.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);
