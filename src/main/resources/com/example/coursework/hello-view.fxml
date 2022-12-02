@@ -126,5 +126,10 @@
                 <Cursor fx:constant="HAND" />
             </cursor>
         </Button>
+      <Text fx:id="time_text" fill="#dd2828" layoutX="260.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="494.8199462890625">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Text>
     </children>
 </AnchorPane>

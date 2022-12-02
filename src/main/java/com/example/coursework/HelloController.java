@@ -3,15 +3,23 @@ package com.example.coursework;
 
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.text.Text;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
 
 import static com.example.coursework.chooseTestController.getJavaQuestions;
 import static com.example.coursework.chooseTestController.getPythonQuestions;
@@ -19,6 +27,7 @@ import static com.example.coursework.chooseTestController.getCiPlusPlusQuestions
 import static com.example.coursework.chooseTestController.getDatabaseQuestions;
 import static com.example.coursework.chooseTestController.getHrManagerQuestions;
 
+import static java.util.concurrent.TimeUnit.SECONDS;
 
 
 
@@ -34,6 +43,10 @@ public class HelloController {
 
     @FXML
     private Text question_text;
+
+    @FXML
+    private Text time_text;
+
 
     @FXML
     private RadioButton radio_btn_1;
@@ -131,6 +144,44 @@ public class HelloController {
 
     public void startQuiz(Questions[] type_of_questions)
     {
+
+        final ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
+        final Runnable runnable = new Runnable()
+        {
+            int start = 300;
+            int endTime = 3;
+
+            @Override
+            public void run()
+            {
+
+                time_text.setText("Оставшееся время: " + start + " секунд");
+                start --;
+                if(start < 0)
+                {
+                    time_text.setText("Время прохождения теста вышло!");
+
+                    endTime--;
+                    if (endTime == 0)
+                    {
+                        scheduler.shutdown();
+                        System.exit(0);
+                    }
+
+
+                }
+
+            }
+
+        };
+
+        scheduler.scheduleAtFixedRate(runnable,0,1,SECONDS);
+
+
+
+
+
+
         int curentId = loginController.getCurrent_user_id();
         DBHandler.updateUserAccessToZero(curentId);
 
