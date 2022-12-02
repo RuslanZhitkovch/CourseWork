@@ -131,6 +131,8 @@ public class HelloController {
 
     public void startQuiz(Questions[] type_of_questions)
     {
+        int curentId = loginController.getCurrent_user_id();
+        DBHandler.updateUserAccessToZero(curentId);
 
 
         //System.out.println(getJavaQuestions());
@@ -187,23 +189,22 @@ public class HelloController {
                     answerBtn.setVisible(false);
 
                     question_text.setText("Вы правильно ответили на " + (correctAnswers) + " из " + (type_of_questions.length - 1) + " вопросов!");
+
+
+
+
                 } else {
                     nowQuestion++;
                     nowCorrectAnswer = type_of_questions[nowQuestion].correctAnswer();
-
                     question_text.setText(type_of_questions[nowQuestion].getQuestion());
                     String[] answers = type_of_questions[nowQuestion].getAnswers();
 
-
                     List<String> intList = Arrays.asList(answers);
-
                     Collections.shuffle(intList);
-
                     radio_btn_1.setText(intList.get(0));
                     radio_btn_2.setText(intList.get(1));
                     radio_btn_3.setText(intList.get(2));
                     radio_btn_4.setText(intList.get(3));
-
                     selectedRadioButton.setSelected(false);
                 }
 

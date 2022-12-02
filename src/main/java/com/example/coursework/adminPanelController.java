@@ -161,7 +161,7 @@ public class adminPanelController
                 field_password.setText(table.getSelectionModel().getSelectedItem().getPassword());
                 field_job_title.setText(table.getSelectionModel().getSelectedItem().getJob_title());
             } else {
-                field_name.setText("Choose any item");
+                field_name.setText("Выберите параметр для изменения");
             }
             button_update.setOnAction(e -> {
                 User user = new User(

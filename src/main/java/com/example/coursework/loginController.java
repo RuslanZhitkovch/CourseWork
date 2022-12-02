@@ -21,7 +21,17 @@ import javafx.stage.Stage;
 
 public class loginController {
 
+    public static int current_user_id;     // для последующего изменения access на 0.
 
+    public static int getCurrent_user_id()
+    {
+        return current_user_id;
+    }
+
+    public void setCurrentUserId(int current_user_id)
+    {
+        this.current_user_id = current_user_id;
+    }
 
    public String CURRENT_ACCESS = "0";
 
@@ -142,9 +152,14 @@ public class loginController {
         }
 
 
+
+
         if (counter >=1  )
         {
-            loginSignUpButton.getScene().getWindow().hide();
+
+
+
+          loginSignUpButton.getScene().getWindow().hide();
           Parent root = FXMLLoader.load(getClass().getResource("adminPanel.fxml"));
           Scene scene = new Scene(root);
           Stage primaryStage = new Stage();
@@ -154,11 +169,18 @@ public class loginController {
           primaryStage.show();
         }
 
+
+
+
+
+
         User user = new User();
         user.setEmail(emailText);       // устанавливаем юзеру email из кнопки
         user.setPassword(loginPassword);
         user.setAccess("1");  // для проверки может ли аккаунт пройти тест
         user.setRole("0");  // для проверки может ли аккаунт пройти тест
+
+
 
 
         DBHandler dbHandlerUser = new DBHandler();
@@ -174,6 +196,9 @@ public class loginController {
         {
             while (resultUser.next())
             {
+                int q = resultUser.getInt(1);
+                System.out.println("Current id is: "+ q);
+                setCurrentUserId(q);
                 counterUser++;
 
 
@@ -188,6 +213,8 @@ public class loginController {
             e.printStackTrace();
         }
 
+        System.out.println(current_user_id);
+        System.out.println(getCurrent_user_id());
 
         if (counterUser >=1  )
         {
@@ -205,7 +232,8 @@ public class loginController {
 
 
 
-        if (counterUser <1 && counter <1){
+        if (counterUser <1 && counter <1)
+        {
 
 
             System.out.println("incorrect password");

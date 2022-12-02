@@ -35,6 +35,7 @@ public class DBHandler extends Configs
     }
 
 
+
     public void addUserToDBAfterRegister(String name, String second_name, String email, String age, String job_title, String role, String access, String password) throws SQLException, ClassNotFoundException {
         String insert = "INSERT INTO " + Const.USER_TABLE + "(" +
                 Const.USER_NAME + "," +
@@ -105,6 +106,34 @@ public class DBHandler extends Configs
         return resSet;
 
     }
+
+
+
+
+
+
+
+    public static void updateUserAccessToZero(int id)
+    {
+        Connection connection = DBHandler.getConnection();
+        String sqlQuery = "UPDATE users SET access = 0 WHERE idusers = ?";
+
+        try {
+            PreparedStatement statement = connection.prepareStatement(sqlQuery);
+            statement.setInt(1, id);
+
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
+
+
+
+
+
 
 
 
