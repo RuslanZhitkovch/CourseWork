@@ -42,6 +42,7 @@ public class registerController {
     @FXML
     void initialize()
     {
+
         DBHandler dbHandler = new DBHandler();
 
         confirmRegisterButton.setOnAction(event->
