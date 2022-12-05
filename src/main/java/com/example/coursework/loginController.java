@@ -21,6 +21,11 @@ import javafx.stage.Stage;
 
 public class loginController {
 
+    public boolean equals(Object obj) {
+        return (this == obj);
+    }
+
+
     public static int current_user_id;     // для последующего изменения access на 0.
 
     public static int getCurrent_user_id()
@@ -113,7 +118,7 @@ public class loginController {
 
         User admin = new User();
         admin.setEmail(emailText);       // устанавливаем юзеру email из кнопки
-        admin.setPassword(loginPassword);
+        admin.setPassword(HashPassword.md5Custom(loginPassword));
         admin.setAccess("1");  // для проверки может ли аккаунт пройти тест
         admin.setRole("1");  // для проверки на админа
 
@@ -176,10 +181,10 @@ public class loginController {
 
         User user = new User();
         user.setEmail(emailText);       // устанавливаем юзеру email из кнопки
-        user.setPassword(loginPassword);
+        user.setPassword(HashPassword.md5Custom(loginPassword));
         user.setAccess("1");  // для проверки может ли аккаунт пройти тест
         user.setRole("0");  // для проверки может ли аккаунт пройти тест
-
+        System.out.println(user.getPassword());
 
 
 
