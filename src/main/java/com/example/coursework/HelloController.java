@@ -15,6 +15,8 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -216,6 +218,34 @@ public class HelloController {
 
 
 
+        Question question = new Question();
+        question.setJob_title_code(1);
+        DBHandler dbHandler = new DBHandler();
+        ResultSet result = dbHandler.getQuestion(question);
+
+        int counter = 0;
+
+        try
+        {
+            while(result.next())
+            {
+                counter++;
+            }
+
+        }
+
+        catch (SQLException e)
+        {
+            e.printStackTrace();
+        }
+
+        System.out.println(counter);
+
+
+
+
+
+
 
         nowCorrectAnswer = type_of_questions[nowQuestion].correctAnswer();
 
@@ -228,7 +258,7 @@ public class HelloController {
                     System.out.println("Верный ответ");
                     correctAnswers++;
                 } else {
-                    System.out.println("Не верный ответ");
+                    System.out.println("Неверный ответ");
                 }
 
                 // Это был последний вопрос
@@ -240,6 +270,7 @@ public class HelloController {
                     answerBtn.setVisible(false);
 
                     question_text.setText("Вы правильно ответили на " + (correctAnswers) + " из " + (type_of_questions.length - 1) + " вопросов!");
+                    time_text.setText("");
 
 
 
@@ -252,6 +283,9 @@ public class HelloController {
 
                     List<String> intList = Arrays.asList(answers);
                     Collections.shuffle(intList);
+
+
+
                     radio_btn_1.setText(intList.get(0));
                     radio_btn_2.setText(intList.get(1));
                     radio_btn_3.setText(intList.get(2));

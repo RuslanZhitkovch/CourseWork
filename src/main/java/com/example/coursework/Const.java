@@ -3,6 +3,10 @@ package com.example.coursework;
 
 public class Const
 {
+    public static final String QUESTIONS_TABLE = "questions";
+    public static final String JOB_TITLE_CODE = "job_title_code";
+
+
     public static final String USER_TABLE = "users";
     public static final String USER_ID = "idusers";
     public static final String USER_NAME = "name";

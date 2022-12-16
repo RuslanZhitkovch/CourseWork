@@ -134,7 +134,6 @@ public class chooseTestController
 
         aboutProgramButton.setOnAction(event ->
         {
-
             aboutProgramButton.getScene().getWindow().hide();
             Parent root = null;
             try {
@@ -178,9 +177,6 @@ public class chooseTestController
             primaryStage.setScene(scene);
             primaryStage.initModality(Modality.WINDOW_MODAL);
             primaryStage.show();
-
-
-
 
         });
 

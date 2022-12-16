@@ -4,8 +4,6 @@ import java.io.Serializable;
 
 public class User implements Serializable
 {
-
-
     private Integer idusers;
     private String name;
     private String second_name;
@@ -15,11 +13,6 @@ public class User implements Serializable
     private String role;
     public  String access;
     private String password;
-
-
-
-
-
 
     public User(Integer idusers, String name, String second_name, String email, String age, String job_title, String role, String access, String password)
     {

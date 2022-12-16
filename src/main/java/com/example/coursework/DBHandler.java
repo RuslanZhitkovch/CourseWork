@@ -14,7 +14,7 @@ public class DBHandler extends Configs
 
         String connectionString = "jdbc:mysql://" + dbHost + ":"
                 + dbPort +"/" +dbName + "?" + "autoReconnect=true&useSSL=false&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-        Class.forName("com.mysql.cj.jdbc.Driver");  // Имя драйвера, который будем использовать
+        Class.forName("com.mysql.cj.jdbc.Driver");
         dbConnection = DriverManager.getConnection(connectionString, dbUser,dbPass);
         return dbConnection;
     }
@@ -78,7 +78,7 @@ public class DBHandler extends Configs
     {
         ResultSet resSet = null;
 
-        //String select = "SELECT * FROM " + Const.USER_TABLE + " WHERE " + Const.USER_EMAIL + "=? AND " + Const.USER_PASSWORD + "=?";
+
         String select = "SELECT * FROM " + Const.USER_TABLE + " WHERE " + Const.USER_EMAIL + "=? AND " + Const.USER_PASSWORD + "=? AND " + Const.USER_ACCESS + "=? AND " + Const.USER_ROLE + " =?";
 
         try{
@@ -100,12 +100,37 @@ public class DBHandler extends Configs
         {
             e.printStackTrace();
         }
+        return resSet;
+    }
+
+
+    public ResultSet getQuestion(Question question)
+    {
+        ResultSet resSet = null;
+        String select = "SELECT * FROM " + Const.QUESTIONS_TABLE + " WHERE " + Const.JOB_TITLE_CODE + "=?";
+
+        try{
+
+            PreparedStatement prSt = getDbConnection().prepareStatement(select);
+
+            prSt.setInt(1,question.getJob_title_code());
+
+            resSet =  prSt.executeQuery();   // метод кот. получает данные из БД
+        }
+        catch(SQLException e)
+        {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e)
+
+        {
+            e.printStackTrace();
+        }
 
 
 
         return resSet;
-
     }
+
 
 
 

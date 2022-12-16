@@ -48,7 +48,14 @@ public class registerController {
         confirmRegisterButton.setOnAction(event->
         {
 
-            if((secondNameButton.getText().length() < 5 || secondNameButton.getText().length() > 20) ||(passwordButton.getText().length() < 5 || passwordButton.getText().length() > 20) || (emailButton.getText().length() < 5 || emailButton.getText().length() > 20 ) || (usernameButton.getText().length() < 5 || usernameButton.getText().length() > 20)) // || or
+            if((secondNameButton.getText().length() < 5 ||
+                    secondNameButton.getText().length() > 20)
+                    ||(passwordButton.getText().length() < 5 ||
+                    passwordButton.getText().length() > 20)
+                    || (emailButton.getText().length() < 5 ||
+                    emailButton.getText().length() > 20 ) ||
+                    (usernameButton.getText().length() < 5 ||
+                            usernameButton.getText().length() > 20)) // || or
             {
                 error_text.setText("Не корректные данные");
                 System.out.println("Не корректные данные");

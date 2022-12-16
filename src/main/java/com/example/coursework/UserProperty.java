@@ -24,10 +24,6 @@ public class UserProperty
 
 
 
-
-
-
-
     public Integer getIdusers() {
         return idusers.get();
     }

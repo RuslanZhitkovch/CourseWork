@@ -91,10 +91,10 @@ public class loginController {
 
         goToRegisterButton.setOnAction(event ->
                 {
-
                     goToRegisterButton.getScene().getWindow().hide();
                     Parent root = null;
-                    try {
+                    try
+                    {
                         root = FXMLLoader.load(getClass().getResource("registerManager.fxml"));
                     } catch (IOException e) {
                         throw new RuntimeException(e);
@@ -123,18 +123,8 @@ public class loginController {
         admin.setRole("1");  // для проверки на админа
 
 
-
-
-
-
-
-
         DBHandler dbHandler = new DBHandler();
         ResultSet result =  dbHandler.getUser(admin);
-
-
-
-
 
         int counter = 0;
 
@@ -148,22 +138,13 @@ public class loginController {
             }
         }
 
-
-
-
         catch (SQLException e)
         {
             e.printStackTrace();
         }
 
-
-
-
         if (counter >=1  )
         {
-
-
-
           loginSignUpButton.getScene().getWindow().hide();
           Parent root = FXMLLoader.load(getClass().getResource("adminPanel.fxml"));
           Scene scene = new Scene(root);
@@ -173,9 +154,6 @@ public class loginController {
           primaryStage.initModality(Modality.WINDOW_MODAL);
           primaryStage.show();
         }
-
-
-
 
 
 

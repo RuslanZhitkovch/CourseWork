@@ -13,7 +13,8 @@ public class UserRepositoryImpl implements UserRepository {
 
 
     @Override
-    public List<User> gelAll() {
+    public List<User> gelAll()
+    {
         List<User> users;
 
         try {

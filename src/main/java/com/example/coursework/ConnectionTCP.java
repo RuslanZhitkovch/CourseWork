@@ -16,7 +16,7 @@ public class ConnectionTCP {
             this.outputStream = new ObjectOutputStream(socket.getOutputStream());
             this.inputStream = new ObjectInputStream(socket.getInputStream());
         } catch (IOException e) {
-            throw new RuntimeException("can't initialise", e);
+            throw new RuntimeException("Ошибочка", e);
         }
     }
 
