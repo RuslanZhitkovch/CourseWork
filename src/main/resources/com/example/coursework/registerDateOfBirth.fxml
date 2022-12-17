@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="460.0" prefWidth="747.0" style="-fx-background-color: #f7746a;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.coursework.RegisterDateOfBirthController">
+    <children>
+        <AnchorPane layoutY="117.0" prefHeight="343.0" prefWidth="747.0" style="-fx-background-color: white;">
+            <children>
+                <Button fx:id="confirmRegisterButton" layoutX="232.0" layoutY="257.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="260.0" style="-fx-background-color: #f7746a;" text="Подтвердить">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Button>
+                <Text fx:id="error_text" fill="#dd1616" layoutX="513.0" layoutY="147.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="199.0">
+                    <font>
+                        <Font size="26.0" />
+                    </font>
+                </Text>
+                <TextField fx:id="dayButton" layoutX="232.0" layoutY="75.0" prefHeight="44.0" prefWidth="260.0" promptText="День">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </TextField>
+                <TextField fx:id="MonthButton" layoutX="232.0" layoutY="128.0" prefHeight="44.0" prefWidth="260.0" promptText="Месяц">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </TextField>
+                <TextField fx:id="yearButton" layoutX="232.0" layoutY="180.0" prefHeight="44.0" prefWidth="260.0" promptText="Год">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </TextField>
+            <Label layoutX="145.0" layoutY="14.0" prefHeight="50.0" prefWidth="458.0" text="Введите день, месяц, год вашего дня рождения.">
+               <font>
+                  <Font name="System Bold Italic" size="17.0" />
+               </font>
+            </Label>
+            </children>
+        </AnchorPane>
+        <Label layoutX="62.0" layoutY="31.0" prefHeight="50.0" prefWidth="642.0" text="                                Регистрация в программе">
+            <font>
+                <Font name="System Bold" size="22.0" />
+            </font>
+        </Label>
+    </children>
+</AnchorPane>

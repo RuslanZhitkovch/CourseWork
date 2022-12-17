@@ -60,7 +60,8 @@ public class UserRepositoryImpl implements UserRepository {
 
 
     @Override
-    public void add(User user) {
+    public void add(User user)
+    {
         String sqlQuery = "INSERT INTO users (name, second_name, email, age, job_title, role,access,password) VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
 
         try {

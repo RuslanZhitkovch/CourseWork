@@ -1,9 +1,11 @@
 package com.example.coursework;
 
-public class Questions {
+import java.util.Arrays;
 
+public class Questions {
     private String question;
     private String[] answers;
+
 
     public Questions(String question, String[] answers)
     {
@@ -16,14 +18,18 @@ public class Questions {
         return this.answers[answers.length - 1];
     }
 
-    public String getQuestion()
-    {
+    public String getQuestion() {
         return question;
+    }
+
+    public void setQuestion(String question) {
+        this.question = question;
     }
 
     public String[] getAnswers()
     {
         return answers;
     }
+
 
 }

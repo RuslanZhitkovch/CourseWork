@@ -16,7 +16,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -76,6 +76,16 @@ public class HelloController {
 
 
 
+
+
+
+
+
+
+
+    String a ="";
+
+
     private Questions[] pythonQuestions = new Questions[]
             {       new Questions("Как ваше настроение?", new String[] {"Неважно", "Плохо", "Могло быть лучше", "Боевое" }),
                     new Questions("Как вывести информацию на экран?", new String[] {"Console.Write()", "console.log()", "System.out.println()", "print()" }),
@@ -85,6 +95,16 @@ public class HelloController {
                     new Questions("Алгоритм, в котором действия выполняются в зависимости от истинности условия называется:", new String[] {"Линейный", "Нелинейный", "Циклический", "Разветвляющийся"}),
                     new Questions("Выберите оператор ввода:", new String[] {"print(x)", "x = 12", "x*5","x=input()"})
             };
+
+
+
+
+
+
+
+
+
+
 
 
     private Questions[] javaQuestions = new Questions[]
@@ -218,38 +238,12 @@ public class HelloController {
 
 
 
-        Question question = new Question();
-        question.setJob_title_code(1);
-        DBHandler dbHandler = new DBHandler();
-        ResultSet result = dbHandler.getQuestion(question);
-
-        int counter = 0;
-
-        try
-        {
-            while(result.next())
-            {
-                counter++;
-            }
-
-        }
-
-        catch (SQLException e)
-        {
-            e.printStackTrace();
-        }
-
-        System.out.println(counter);
-
-
-
-
-
-
 
         nowCorrectAnswer = type_of_questions[nowQuestion].correctAnswer();
 
         answerBtn.setOnAction(e -> {
+
+
             RadioButton selectedRadioButton = (RadioButton) answers.getSelectedToggle();
             if(selectedRadioButton != null) {
                 String toogleGroupValue = selectedRadioButton.getText();
@@ -300,43 +294,43 @@ public class HelloController {
 
     @FXML
     public void initialize()
-     {
+    {
 
 
-         if (getJavaQuestions() == 1)
-         {
-             startQuiz(javaQuestions);
+        if (getJavaQuestions() == 1)
+        {
+            startQuiz(javaQuestions);
 
 
-         }
+        }
 
-         if (getPythonQuestions() == 1)
-         {
-             startQuiz(pythonQuestions);
-         }
+        if (getPythonQuestions() == 1)
+        {
+            startQuiz(pythonQuestions);
+        }
 
-         if (getDatabaseQuestions() == 1)
-         {
-             startQuiz(databaseQuestions);
-         }
+        if (getDatabaseQuestions() == 1)
+        {
+            startQuiz(databaseQuestions);
+        }
 
-         if (getCiPlusPlusQuestions() == 1)
-         {
-             startQuiz(ciPlusPlusQuestions);
-         }
+        if (getCiPlusPlusQuestions() == 1)
+        {
+            startQuiz(ciPlusPlusQuestions);
+        }
 
-         if (getHrManagerQuestions() == 1)
-         {
-             startQuiz(hrManagerQuestions);
-         }
-
-
-
+        if (getHrManagerQuestions() == 1)
+        {
+            startQuiz(hrManagerQuestions);
+        }
 
 
 
 
 
-     }
+
+
+
+    }
 
 }

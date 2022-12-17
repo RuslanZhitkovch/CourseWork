@@ -10,6 +10,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class registerController {
@@ -57,14 +58,74 @@ public class registerController {
                     (usernameButton.getText().length() < 5 ||
                             usernameButton.getText().length() > 20)) // || or
             {
-                error_text.setText("Не корректные данные");
-                System.out.println("Не корректные данные");
+                error_text.setText("Некорректные данные");
+                System.out.println("Некорректные данные");
             }
+
+            if( !(jobTitleButton.getText().equals("Рекрутер" )) &
+                    !(jobTitleButton.getText().equals("Проектировщик" )) &
+                    !(jobTitleButton.getText().equals("Разработчик" )) &
+                !(jobTitleButton.getText().equals("Менеджер" )) &
+            !(jobTitleButton.getText().equals("Тестировщик" )) &
+            !(jobTitleButton.getText().equals("Тимлид" )))
+
+            {
+                error_text.setText("Такой должности не существует");
+                System.out.println("Некорректные данные");
+            }
+
+
+
            else {
 
 
                 try {
-                    dbHandler.addUserToDBAfterRegister(usernameButton.getText(), secondNameButton.getText(), emailButton.getText(), ageButton.getText(), jobTitleButton.getText(), "0", "1", HashPassword.md5Custom(passwordButton.getText()));
+                    DateOfBirth dofb = new DateOfBirth();
+
+                    ResultSet resultSet = dbHandler.getLastDateOfBirthID(dofb);
+
+                    while (resultSet.next())
+                    {
+                        String id = String.valueOf(resultSet.getInt(1));
+                        System.out.println(id);
+
+                        String codeJobTitle = null;
+
+                        if (jobTitleButton.getText().equals("Рекрутер"))
+                        {
+                            codeJobTitle = "1";
+                        }
+
+                        if (jobTitleButton.getText().equals("Проектировщик"))
+                        {
+                            codeJobTitle = "2";
+                        }
+
+                        if (jobTitleButton.getText().equals("Разработчик"))
+                        {
+                            codeJobTitle = "3";
+                        }
+
+                        if (jobTitleButton.getText().equals("Менеджер"))
+                        {
+                            codeJobTitle = "4";
+                        }
+
+                        if (jobTitleButton.getText().equals("Тестировщик"))
+                        {
+                            codeJobTitle = "5";
+                        }
+                        if (jobTitleButton.getText().equals("Тимлид"))
+                        {
+                            codeJobTitle = "6";
+                        }
+
+                        dbHandler.addUserToDBAfterRegister(usernameButton.getText(), secondNameButton.getText(), emailButton.getText(), id, codeJobTitle, "0", "1", HashPassword.md5Custom(passwordButton.getText()));
+                    }
+
+
+
+
 
                     confirmRegisterButton.getScene().getWindow().hide();
                     FXMLLoader loader = new FXMLLoader();

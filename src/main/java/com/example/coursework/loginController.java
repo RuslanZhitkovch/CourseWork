@@ -95,7 +95,7 @@ public class loginController {
                     Parent root = null;
                     try
                     {
-                        root = FXMLLoader.load(getClass().getResource("registerManager.fxml"));
+                        root = FXMLLoader.load(getClass().getResource("registerDateOfBirth.fxml"));
                     } catch (IOException e) {
                         throw new RuntimeException(e);
                     }

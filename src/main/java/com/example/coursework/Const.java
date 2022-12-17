@@ -3,18 +3,21 @@ package com.example.coursework;
 
 public class Const
 {
-    public static final String QUESTIONS_TABLE = "questions";
-    public static final String JOB_TITLE_CODE = "job_title_code";
 
+
+    public static final String DATE_OF_BIRTH_TABLE = "date_of_birth";
+    public static final String DAY = "day";
+    public static final String MONTH = "month";
+    public static final String YEAR = "year";
 
     public static final String USER_TABLE = "users";
     public static final String USER_ID = "idusers";
     public static final String USER_NAME = "name";
     public static final String USER_SECOND_NAME = "second_name";
     public static final String USER_EMAIL = "email";
-    public static final String USER_AGE = "age";
-    public static final String USER_JOB_TITLE = "job_title";
-    public static final String USER_ROLE = "role";
-    public static final String USER_ACCESS = "access";
+    public static final String USER_CODE_DATE_OF_BIRTH = "id_date_of_birth";
+    public static final String USER_JOB_TITLE = "id_job_title";
+    public static final String USER_ROLE = "id_role";
+    public static final String USER_ACCESS = "id_access";
     public static final String USER_PASSWORD = "password";
 }

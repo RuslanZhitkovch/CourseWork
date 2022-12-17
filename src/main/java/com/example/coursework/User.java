@@ -4,36 +4,39 @@ import java.io.Serializable;
 
 public class User implements Serializable
 {
+
+
+
     private Integer idusers;
     private String name;
     private String second_name;
     private String email;
-    private String age;
+    private String code_date_of_birth;
     private String job_title;
     private String role;
     public  String access;
     private String password;
 
-    public User(Integer idusers, String name, String second_name, String email, String age, String job_title, String role, String access, String password)
+    public User(Integer idusers, String name, String second_name, String email, String code_date_of_birth, String job_title, String role, String access, String password)
     {
 
         this.idusers = idusers;
         this.name = name;
         this.second_name = second_name;
         this.email = email;
-        this.age = age;
+        this.code_date_of_birth = code_date_of_birth;
         this.job_title = job_title;
         this.role = role;
         this.access = access;
         this.password = password;
     }
 
-    public User(String name, String second_name, String email, String age, String job_title, String role, String access, String password)
+    public User(String name, String second_name, String email, String code_date_of_birth, String job_title, String role, String access, String password)
     {
         this.name = name;
         this.second_name = second_name;
         this.email = email;
-        this.age = age;
+        this.code_date_of_birth = code_date_of_birth;
         this.job_title = job_title;
         this.role = role;
         this.access = access;
@@ -45,12 +48,12 @@ public class User implements Serializable
 
     }
 
-    public User(String name, String second_name, String email, String age, String role, String job_title,String access, String password, Integer idusers)
+    public User(String name, String second_name, String email, String code_date_of_birth, String role, String job_title,String access, String password, Integer idusers)
     {
         this.name = name;
         this.second_name = second_name;
         this.email = email;
-        this.age = age;
+        this.code_date_of_birth = code_date_of_birth;
         this.job_title = job_title;
         this.role = role;
         this.access = access;
@@ -96,11 +99,11 @@ public class User implements Serializable
     }
 
     public String getAge() {
-        return age;
+        return code_date_of_birth;
     }
 
-    public void setAge(String age) {
-        this.age = age;
+    public void setAge(String code_date_of_birth) {
+        this.code_date_of_birth = code_date_of_birth;
     }
 
     public String getJob_title() {

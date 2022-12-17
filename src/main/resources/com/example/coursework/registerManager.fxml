@@ -11,42 +11,37 @@
     <children>
         <AnchorPane layoutY="117.0" prefHeight="343.0" prefWidth="747.0" style="-fx-background-color: white;">
             <children>
-                <TextField fx:id="usernameButton" layoutX="25.0" layoutY="20.0" prefHeight="44.0" prefWidth="153.0" promptText="Имя">
+                <TextField fx:id="usernameButton" layoutX="25.0" layoutY="20.0" prefHeight="44.0" prefWidth="240.0" promptText="Имя">
                     <font>
                         <Font size="20.0" />
                     </font>
                 </TextField>
-                <Button fx:id="confirmRegisterButton" layoutX="295.0" layoutY="269.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="136.0" style="-fx-background-color: #f7746a;" text="Подтвердить">
+                <Button fx:id="confirmRegisterButton" layoutX="249.0" layoutY="263.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="249.0" style="-fx-background-color: #f7746a;" text="Подтвердить">
                     <font>
                         <Font size="18.0" />
                     </font>
                 </Button>
-                <TextField fx:id="secondNameButton" layoutX="25.0" layoutY="99.0" prefHeight="44.0" prefWidth="153.0" promptText="Фамилия">
+                <TextField fx:id="secondNameButton" layoutX="25.0" layoutY="99.0" prefHeight="44.0" prefWidth="240.0" promptText="Фамилия">
                     <font>
                         <Font size="20.0" />
                     </font>
                 </TextField>
-                <TextField fx:id="ageButton" layoutX="25.0" layoutY="172.0" prefHeight="44.0" prefWidth="153.0" promptText="Возраст">
+                <TextField fx:id="emailButton" layoutX="25.0" layoutY="172.0" prefHeight="44.0" prefWidth="260.0" promptText="Электронная почта">
                     <font>
                         <Font size="20.0" />
                     </font>
                 </TextField>
-                <TextField fx:id="emailButton" layoutX="473.0" layoutY="20.0" prefHeight="44.0" prefWidth="260.0" promptText="Электронная почта">
+                <TextField fx:id="passwordButton" layoutX="412.0" layoutY="20.0" prefHeight="44.0" prefWidth="260.0" promptText="Пароль">
                     <font>
                         <Font size="20.0" />
                     </font>
                 </TextField>
-                <TextField fx:id="passwordButton" layoutX="473.0" layoutY="99.0" prefHeight="44.0" prefWidth="260.0" promptText="Пароль">
+                <TextField fx:id="jobTitleButton" layoutX="412.0" layoutY="99.0" prefHeight="44.0" prefWidth="260.0" promptText="Должность">
                     <font>
                         <Font size="20.0" />
                     </font>
                 </TextField>
-                <TextField fx:id="jobTitleButton" layoutX="473.0" layoutY="172.0" prefHeight="44.0" prefWidth="260.0" promptText="Должность">
-                    <font>
-                        <Font size="20.0" />
-                    </font>
-                </TextField>
-            <Text fx:id="error_text" fill="#dd1616" layoutX="232.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="199.0">
+            <Text fx:id="error_text" fill="#dd1616" layoutX="392.0" layoutY="203.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="300.0">
                <font>
                   <Font size="26.0" />
                </font>

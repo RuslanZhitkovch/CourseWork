@@ -36,12 +36,40 @@ public class DBHandler extends Configs
 
 
 
-    public void addUserToDBAfterRegister(String name, String second_name, String email, String age, String job_title, String role, String access, String password) throws SQLException, ClassNotFoundException {
+    public void addDateOfBirthAfterRegister(Integer day, String month, String year)
+    {
+        String insert = "INSERT INTO "+ Const.DATE_OF_BIRTH_TABLE + "("+
+                Const.DAY + "," +
+                Const.MONTH + "," +
+                Const.YEAR + ")" +
+            "VALUES(?,?,?)";
+        try{
+            PreparedStatement prSt = getDbConnection().prepareStatement(insert);
+            prSt.setInt(1,day);
+            prSt.setString(2,month);
+            prSt.setString(3,year);
+
+            prSt.executeUpdate();
+
+        } catch (SQLException e)
+        {
+            throw new RuntimeException(e);
+
+        }
+        catch (ClassNotFoundException e)
+        {
+            throw new RuntimeException(e);
+        }
+    }
+
+
+
+    public void addUserToDBAfterRegister(String name, String second_name, String email, String code_date_of_birth, String job_title, String role, String access, String password) throws SQLException, ClassNotFoundException {
         String insert = "INSERT INTO " + Const.USER_TABLE + "(" +
                 Const.USER_NAME + "," +
                 Const.USER_SECOND_NAME + "," +
                 Const.USER_EMAIL + "," +
-                Const.USER_AGE + "," +
+                Const.USER_CODE_DATE_OF_BIRTH + "," +
                 Const.USER_JOB_TITLE + "," +
                 Const.USER_ROLE+ "," +
                 Const.USER_ACCESS + "," +
@@ -53,7 +81,7 @@ public class DBHandler extends Configs
             prSt.setString(1,name);
             prSt.setString(2,second_name);
             prSt.setString(3,email);
-            prSt.setString(4,age);
+            prSt.setString(4,code_date_of_birth);
             prSt.setString(5,job_title);
             prSt.setString(6,role);
             prSt.setString(7,access);
@@ -104,32 +132,34 @@ public class DBHandler extends Configs
     }
 
 
-    public ResultSet getQuestion(Question question)
+
+    public  ResultSet getLastDateOfBirthID(DateOfBirth dateOfBirth)
     {
         ResultSet resSet = null;
-        String select = "SELECT * FROM " + Const.QUESTIONS_TABLE + " WHERE " + Const.JOB_TITLE_CODE + "=?";
 
-        try{
+        Connection connection = DBHandler.getConnection();
+        String select = "SELECT idDateOfBirth FROM date_of_birth ORDER BY idDateOfBirth DESC LIMIT 1";
 
-            PreparedStatement prSt = getDbConnection().prepareStatement(select);
+       try {
+           PreparedStatement prSt = getDbConnection().prepareStatement(select);
+           resSet =  prSt.executeQuery();   // метод кот. получает данные из БД
+       }
+       catch (SQLException r)
+       {
+           r.printStackTrace();
+       }
+       catch (ClassNotFoundException r)
 
-            prSt.setInt(1,question.getJob_title_code());
-
-            resSet =  prSt.executeQuery();   // метод кот. получает данные из БД
-        }
-        catch(SQLException e)
-        {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e)
-
-        {
-            e.printStackTrace();
-        }
-
+       {
+          r.printStackTrace();
+       }
 
 
-        return resSet;
+       return resSet;
     }
+
+
+
 
 
 
