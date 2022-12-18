@@ -31,7 +31,7 @@ public class User implements Serializable
         this.password = password;
     }
 
-    public User(String name, String second_name, String email, String code_date_of_birth, String job_title, String role, String access, String password)
+    public User(String name, String second_name, String email, String code_date_of_birth,  String role, String access, String password,String job_title)
     {
         this.name = name;
         this.second_name = second_name;
@@ -48,7 +48,7 @@ public class User implements Serializable
 
     }
 
-    public User(String name, String second_name, String email, String code_date_of_birth, String role, String job_title,String access, String password, Integer idusers)
+    public User(String name, String second_name, String email, String code_date_of_birth, String role ,String access, String password, String job_title,Integer idusers)
     {
         this.name = name;
         this.second_name = second_name;

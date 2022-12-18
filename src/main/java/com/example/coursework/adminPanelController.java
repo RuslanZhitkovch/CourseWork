@@ -184,19 +184,13 @@ public class adminPanelController
                         field_password.getText().trim(),
                         field_job_title.getText().trim(),
 
+
                         table.getSelectionModel().getSelectedItem().getIdusers()
                 );
                 connectionTCP.writeObject(Command.UPDATE);
                 connectionTCP.writeObject(user);
             });
         });
-
-
-
-
-
-
-
 
         button_delete.setOnAction(actionEvent -> {
             Integer id = table.getSelectionModel().getSelectedItem().getIdusers();
