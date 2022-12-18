@@ -108,16 +108,21 @@ public class adminPanelController
     void initialize()
     {
 
-        try {
+        try
+        {
             connectionTCP = new ConnectionTCP(new Socket("127.0.0.1", 8000));
-        } catch (IOException e) {
+        }
+        catch (IOException e)
+        {
+            System.out.println("Ошибка в соединении");
             e.printStackTrace();
             System.exit(-1);
         }
+
         column_name.setCellValueFactory(new PropertyValueFactory<>("name"));
         column_second_name.setCellValueFactory(new PropertyValueFactory<>("second_name"));
         email_column.setCellValueFactory(new PropertyValueFactory<>("email"));
-        column_age.setCellValueFactory(new PropertyValueFactory<>("age"));
+        column_age.setCellValueFactory(new PropertyValueFactory<>("code_date_of_birth"));
         column_role.setCellValueFactory(new PropertyValueFactory<>("role"));
         column_access.setCellValueFactory(new PropertyValueFactory<>("access"));
         column_password.setCellValueFactory(new PropertyValueFactory<>("password"));
@@ -130,16 +135,19 @@ public class adminPanelController
                     field_second_name.getText().trim(),
                     field_email.getText().trim(),
                     field_age.getText().trim(),
+                    field_job_title.getText().trim(),
                     field_role.getText().trim(),
                     field_access.getText().trim(),
-                    field_password.getText().trim(),
-                    field_job_title.getText().trim()
+                    field_password.getText().trim()
+
             );
+
             connectionTCP.writeObject(Command.CREATE);
             connectionTCP.writeObject(user);
         });
 
-        button_read.setOnAction(actionEvent -> {
+        button_read.setOnAction(actionEvent ->
+        {
             tableUserProperties.clear();           // чтобы не добавлять каждый раз к существующему списку
             connectionTCP.writeObject(Command.READ);
             List<User> users = (List<User>) connectionTCP.readObject();
@@ -149,6 +157,8 @@ public class adminPanelController
             }
             table.setItems(tableUserProperties);
         });
+
+
 
         button_update.setOnAction(actionEvent -> {
             if (table.getSelectionModel().getSelectedItem() != null) {
@@ -173,12 +183,20 @@ public class adminPanelController
                         field_access.getText().trim(),
                         field_password.getText().trim(),
                         field_job_title.getText().trim(),
+
                         table.getSelectionModel().getSelectedItem().getIdusers()
                 );
                 connectionTCP.writeObject(Command.UPDATE);
                 connectionTCP.writeObject(user);
             });
         });
+
+
+
+
+
+
+
 
         button_delete.setOnAction(actionEvent -> {
             Integer id = table.getSelectionModel().getSelectedItem().getIdusers();

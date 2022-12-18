@@ -42,7 +42,7 @@
             <Font size="16.0" />
          </font>
       </Text>
-      <Text layoutX="1282.0" layoutY="186.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Возраст" wrappingWidth="65.13671875">
+      <Text layoutX="1282.0" layoutY="186.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Код даты " wrappingWidth="89.13671875">
          <font>
             <Font size="16.0" />
          </font>
@@ -62,17 +62,17 @@
             <Font size="16.0" />
          </font>
       </Text>
-      <Text layoutX="1285.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Должность" wrappingWidth="83.13671875">
+      <Text layoutX="1276.0" layoutY="368.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Код должности" wrappingWidth="119.99999999999977">
          <font>
             <Font size="16.0" />
          </font>
       </Text>
-      <Text layoutX="1282.0" layoutY="331.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Доступ" wrappingWidth="65.13671875">
+      <Text layoutX="1282.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Доступ" wrappingWidth="65.13671875">
          <font>
             <Font size="16.0" />
          </font>
       </Text>
-      <Text layoutX="1282.0" layoutY="368.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Пароль" wrappingWidth="89.13671875">
+      <Text layoutX="1282.0" layoutY="331.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Пароль" wrappingWidth="89.13671875">
          <font>
             <Font size="16.0" />
          </font>

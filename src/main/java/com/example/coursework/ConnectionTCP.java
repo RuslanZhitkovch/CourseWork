@@ -29,7 +29,8 @@ public class ConnectionTCP {
     }
 
     public Object readObject() {
-        try {
+        try
+        {
             return inputStream.readObject();
         } catch (IOException | ClassNotFoundException e) {
             throw new RuntimeException(e);

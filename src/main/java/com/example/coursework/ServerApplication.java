@@ -9,7 +9,7 @@ import java.net.Socket;
 public class ServerApplication {
     public void run() {
         try {
-            ServerSocket serverSocket = new ServerSocket(8001);
+            ServerSocket serverSocket = new ServerSocket(8000);
                 System.out.println("Сервер успешно запустился.");
 
             while (true) {

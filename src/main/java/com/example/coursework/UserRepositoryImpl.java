@@ -28,7 +28,7 @@ public class UserRepositoryImpl implements UserRepository {
                         resultSet.getString("name"),
                         resultSet.getString("second_name"),
                         resultSet.getString("email"),
-                        resultSet.getString("age"),
+                        resultSet.getString("code_date_of_birth"),
                         resultSet.getString("job_title"),
                         resultSet.getString("role"),
                         resultSet.getString("access"),
@@ -62,10 +62,12 @@ public class UserRepositoryImpl implements UserRepository {
     @Override
     public void add(User user)
     {
-        String sqlQuery = "INSERT INTO users (name, second_name, email, age, job_title, role,access,password) VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
+        String sqlQuery = "INSERT INTO users (name, second_name, email, code_date_of_birth, job_title, role,access,password) VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
 
         try {
+
             PreparedStatement statement = connection.prepareStatement(sqlQuery);
+
             statement.setString(1, user.getName());
             statement.setString(2, user.getSecond_name());
             statement.setString(3, user.getEmail());
@@ -83,7 +85,7 @@ public class UserRepositoryImpl implements UserRepository {
 
     @Override
     public void update(User user) {
-        String sqlQuery = "UPDATE users SET name = ?, second_name = ?, email = ?, age = ?, job_title = ?, role = ?, access = ?, password = ? WHERE idusers = ?";
+        String sqlQuery = "UPDATE users SET name = ?, second_name = ?, email = ?, code_date_of_birth = ?, job_title = ?, role = ?, access = ?, password = ? WHERE idusers = ?";
 
         try {
             PreparedStatement statement = connection.prepareStatement(sqlQuery);

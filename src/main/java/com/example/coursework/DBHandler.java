@@ -171,7 +171,7 @@ public class DBHandler extends Configs
     public static void updateUserAccessToZero(int id)
     {
         Connection connection = DBHandler.getConnection();
-        String sqlQuery = "UPDATE users SET access = 0 WHERE idusers = ?";
+        String sqlQuery = "UPDATE users SET id_access = 0 WHERE idusers = ?";
 
         try {
             PreparedStatement statement = connection.prepareStatement(sqlQuery);

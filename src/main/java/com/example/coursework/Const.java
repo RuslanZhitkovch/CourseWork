@@ -15,9 +15,9 @@ public class Const
     public static final String USER_NAME = "name";
     public static final String USER_SECOND_NAME = "second_name";
     public static final String USER_EMAIL = "email";
-    public static final String USER_CODE_DATE_OF_BIRTH = "id_date_of_birth";
-    public static final String USER_JOB_TITLE = "id_job_title";
-    public static final String USER_ROLE = "id_role";
-    public static final String USER_ACCESS = "id_access";
+    public static final String USER_CODE_DATE_OF_BIRTH = "code_date_of_birth";
+    public static final String USER_JOB_TITLE = "job_title";
+    public static final String USER_ROLE = "role";
+    public static final String USER_ACCESS = "access";
     public static final String USER_PASSWORD = "password";
 }

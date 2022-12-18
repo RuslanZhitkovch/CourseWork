@@ -11,7 +11,8 @@ public class UserProperty
     private final SimpleStringProperty name;
     private final SimpleStringProperty second_name;
     private final SimpleStringProperty email;
-    private final SimpleStringProperty age;
+
+    private final SimpleStringProperty code_date_of_birth;
     private final SimpleStringProperty job_title;
     private final SimpleStringProperty role;
     private final SimpleStringProperty access;
@@ -24,7 +25,10 @@ public class UserProperty
 
 
 
-    public Integer getIdusers() {
+
+
+
+    public int getIdusers() {
         return idusers.get();
     }
 
@@ -73,15 +77,15 @@ public class UserProperty
     }
 
     public String getAge() {
-        return age.get();
+        return code_date_of_birth.get();
     }
 
-    public SimpleStringProperty ageProperty() {
-        return age;
+    public SimpleStringProperty code_date_of_birthProperty() {
+        return code_date_of_birth;
     }
 
-    public void setAge(String age) {
-        this.age.set(age);
+    public void setCode_date_of_birth(String code_date_of_birth) {
+        this.code_date_of_birth.set(code_date_of_birth);
     }
 
     public String getJob_title() {
@@ -132,31 +136,18 @@ public class UserProperty
         this.password.set(password);
     }
 
-
-
     public UserProperty(User user)
     {
         idusers = new SimpleIntegerProperty(user.getIdusers());
         name = new SimpleStringProperty(user.getName());
         second_name = new SimpleStringProperty(user.getSecond_name());
         email = new SimpleStringProperty(user.getEmail());
-        age = new SimpleStringProperty(user.getAge());
+        code_date_of_birth = new SimpleStringProperty(user.getAge());
         job_title = new SimpleStringProperty(user.getJob_title());
         role = new SimpleStringProperty(user.getRole());
         access = new SimpleStringProperty(user.getAccess());
         password = new SimpleStringProperty(user.getPassword());
     }
-
-
-
-
-
-
-
-
-
-
-
 
 
 

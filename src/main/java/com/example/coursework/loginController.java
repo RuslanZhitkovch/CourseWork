@@ -72,7 +72,9 @@ public class loginController {
             if(!loginText.equals("") && !loginPassword.equals("")) // если пароль и логин не пустые
             {
                 try {
+
                     loginUser(loginText,loginPassword);
+
                 } catch (IOException | SQLException e) {
                     throw new RuntimeException(e);
                 }
