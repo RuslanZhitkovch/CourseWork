@@ -21,7 +21,8 @@ public class ConnectionTCP {
     }
 
     public void writeObject(Object object) {
-        try {
+        try
+        {
             outputStream.writeObject(object);
         } catch (IOException e) {
             throw new RuntimeException(e);

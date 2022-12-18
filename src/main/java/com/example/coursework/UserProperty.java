@@ -5,7 +5,7 @@ import javafx.beans.property.*;
 
 
 
-public class UserProperty
+public class UserProperty                    // для отображения в таблице
 {
     private final SimpleIntegerProperty idusers;
     private final SimpleStringProperty name;

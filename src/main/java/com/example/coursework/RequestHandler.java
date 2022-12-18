@@ -10,7 +10,7 @@ import java.net.Socket;
 
 import java.util.List;
 
-public class RequestHandler implements Runnable {
+public class RequestHandler implements Runnable {              // получает запрос с клиента
     private final ConnectionTCP connectionTCP;
     public RequestHandler(Socket socket) {
         connectionTCP = new ConnectionTCP(socket);

@@ -1,8 +1,5 @@
 package com.example.coursework;
 
-import com.example.coursework.User;
-import com.example.coursework.DBHandler;
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;

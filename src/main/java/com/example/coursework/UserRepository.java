@@ -5,7 +5,8 @@ import com.example.coursework.User;
 
 import java.util.List;
 
-public interface UserRepository {
+public interface UserRepository  // DAO
+{
 
     List<User> gelAll();
 

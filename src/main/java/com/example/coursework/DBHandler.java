@@ -42,7 +42,7 @@ public class DBHandler extends Configs
                 Const.DAY + "," +
                 Const.MONTH + "," +
                 Const.YEAR + ")" +
-            "VALUES(?,?,?)";
+                "VALUES(?,?,?)";
         try{
             PreparedStatement prSt = getDbConnection().prepareStatement(insert);
             prSt.setInt(1,day);
@@ -140,22 +140,22 @@ public class DBHandler extends Configs
         Connection connection = DBHandler.getConnection();
         String select = "SELECT idDateOfBirth FROM date_of_birth ORDER BY idDateOfBirth DESC LIMIT 1";
 
-       try {
-           PreparedStatement prSt = getDbConnection().prepareStatement(select);
-           resSet =  prSt.executeQuery();   // метод кот. получает данные из БД
-       }
-       catch (SQLException r)
-       {
-           r.printStackTrace();
-       }
-       catch (ClassNotFoundException r)
+        try {
+            PreparedStatement prSt = getDbConnection().prepareStatement(select);
+            resSet =  prSt.executeQuery();   // метод кот. получает данные из БД
+        }
+        catch (SQLException r)
+        {
+            r.printStackTrace();
+        }
+        catch (ClassNotFoundException r)
 
-       {
-          r.printStackTrace();
-       }
+        {
+            r.printStackTrace();
+        }
 
 
-       return resSet;
+        return resSet;
     }
 
 
@@ -171,7 +171,7 @@ public class DBHandler extends Configs
     public static void updateUserAccessToZero(int id)
     {
         Connection connection = DBHandler.getConnection();
-        String sqlQuery = "UPDATE users SET id_access = 0 WHERE idusers = ?";
+        String sqlQuery = "UPDATE users SET access = 0 WHERE idusers = ?";
 
         try {
             PreparedStatement statement = connection.prepareStatement(sqlQuery);

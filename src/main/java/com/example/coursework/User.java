@@ -5,8 +5,6 @@ import java.io.Serializable;
 public class User implements Serializable
 {
 
-
-
     private Integer idusers;
     private String name;
     private String second_name;
